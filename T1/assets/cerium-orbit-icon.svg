@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Cerium Orbit</title>
+  <desc id="desc">A smooth open orbital ring with a floating sphere, shaded in violet, electric blue, and cyan gradients.</desc>
+  <defs>
+    <linearGradient id="orbit-gradient" gradientUnits="userSpaceOnUse" x1="190" y1="820" x2="875" y2="240">
+      <stop offset="0" stop-color="#8050F7"/>
+      <stop offset="0.22" stop-color="#6449F5"/>
+      <stop offset="0.45" stop-color="#345AF4"/>
+      <stop offset="0.66" stop-color="#218DF6"/>
+      <stop offset="0.84" stop-color="#25BDF3"/>
+      <stop offset="1" stop-color="#55E2EC"/>
+    </linearGradient>
+    <radialGradient id="sphere-gradient" gradientUnits="userSpaceOnUse" cx="807" cy="484" r="91" fx="791" fy="470">
+      <stop offset="0" stop-color="#D9FFFF"/>
+      <stop offset="0.19" stop-color="#8AF0FF"/>
+      <stop offset="0.48" stop-color="#36C9FC"/>
+      <stop offset="0.76" stop-color="#2384F7"/>
+      <stop offset="1" stop-color="#5148E9"/>
+    </radialGradient>
+    <radialGradient id="sphere-glint" gradientUnits="userSpaceOnUse" cx="790" cy="473" r="38">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <path id="orbit-shape" d="M841.26 713.37A380 380 0 1 1 841.26 310.63A74 74 0 0 1 715.75 389.06A232 232 0 1 0 715.75 634.94A74 74 0 0 1 841.26 713.37Z"/>
+  </defs>
+  <g transform="translate(-43 -60)">
+    <use href="#orbit-shape" fill="url(#orbit-gradient)"/>
+    <circle cx="825" cy="512" r="60" fill="url(#sphere-gradient)"/>
+    <circle cx="825" cy="512" r="60" fill="url(#sphere-glint)"/>
+  </g>
+</svg>
