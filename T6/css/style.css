@@ -1,0 +1,107 @@
+:root {
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-faint: #cbd5e1;
+  --accent: #2563eb;
+  --accent-soft: #eff6ff;
+  --border: #e2e8f0;
+  --radius-lg: 24px;
+  --radius-sm: 8px;
+  --font-mono: 'JetBrains Mono', monospace, ui-monospace;
+  --shadow-card: 0 4px 24px rgba(15, 23, 42, 0.05);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 520px;
+}
+
+.clock-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 3rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.time-digit {
+  font-size: 4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-main);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.time-separator {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  line-height: 1;
+  user-select: none;
+}
+
+.time-ampm {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  background-color: var(--accent-soft);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  letter-spacing: 0.05em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 540px) {
+  .clock-card {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .clock-display {
+    gap: 0.35rem;
+  }
+
+  .time-digit {
+    font-size: 2.6rem;
+  }
+
+  .time-separator {
+    font-size: 2.2rem;
+  }
+
+  .time-ampm {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.45rem;
+    margin-left: 0.25rem;
+  }
+}
