@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="page-container">
+    <div class="converter-card">
+      <div class="card-header">
+        <h1 class="card-title">Currency Converter</h1>
+        <p class="card-subtitle">Real-time exchange rates</p>
+      </div>
+
+      <form class="converter-form" id="converter-form" onsubmit="return false;">
+        <div class="field-group">
+          <label for="amount" class="field-label">Amount</label>
+          <input type="number" id="amount" class="input-field" value="1" min="0" step="any" placeholder="Enter amount" required>
+        </div>
+
+        <div class="currency-row">
+          <div class="currency-col">
+            <label for="from-currency" class="field-label">From</label>
+            <select id="from-currency" class="select-field">
+              <option value="USD" selected>USD - US Dollar</option>
+              <option value="EUR">EUR - Euro</option>
+              <option value="GBP">GBP - British Pound</option>
+              <option value="INR">INR - Indian Rupee</option>
+              <option value="JPY">JPY - Japanese Yen</option>
+              <option value="CAD">CAD - Canadian Dollar</option>
+              <option value="AUD">AUD - Australian Dollar</option>
+              <option value="CHF">CHF - Swiss Franc</option>
+              <option value="CNY">CNY - Chinese Yuan</option>
+              <option value="SGD">SGD - Singapore Dollar</option>
+              <option value="AED">AED - UAE Dirham</option>
+              <option value="SAR">SAR - Saudi Riyal</option>
+            </select>
+          </div>
+
+          <button type="button" class="btn-swap" id="swap-btn" aria-label="Swap currencies">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8v12M17 20l4-4M17 20l-4-4"/>
+            </svg>
+          </button>
+
+          <div class="currency-col">
+            <label for="to-currency" class="field-label">To</label>
+            <select id="to-currency" class="select-field">
+              <option value="USD">USD - US Dollar</option>
+              <option value="EUR">EUR - Euro</option>
+              <option value="GBP">GBP - British Pound</option>
+              <option value="INR" selected>INR - Indian Rupee</option>
+              <option value="JPY">JPY - Japanese Yen</option>
+              <option value="CAD">CAD - Canadian Dollar</option>
+              <option value="AUD">AUD - Australian Dollar</option>
+              <option value="CHF">CHF - Swiss Franc</option>
+              <option value="CNY">CNY - Chinese Yuan</option>
+              <option value="SGD">SGD - Singapore Dollar</option>
+              <option value="AED">AED - UAE Dirham</option>
+              <option value="SAR">SAR - Saudi Riyal</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-convert" id="convert-btn">Convert</button>
+      </form>
+
+      <div class="result-box" id="result-box">
+        <div class="result-main" id="result-amount">Loading rates...</div>
+        <div class="result-sub" id="rate-subtext"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
