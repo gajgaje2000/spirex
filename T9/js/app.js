@@ -45,6 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const q = query.trim().toLowerCase();
     if (!q) return;
 
+    if (!countries.length) {
+      showStatus('Searching...');
+    }
+
     const match = countries.find(c => c.name.common.toLowerCase() === q)
       || countries.find(c => c.name.common.toLowerCase().startsWith(q))
       || countries.find(c => c.name.common.toLowerCase().includes(q))
@@ -52,20 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (match) {
       displayCountry(match);
-    } else {
+    } else if (countries.length) {
       showStatus(`No country found matching "${query}"`);
     }
   }
 
   async function loadData() {
-    showStatus('Loading country database...');
     try {
       const res = await fetch('https://cdn.jsdelivr.net/gh/restcountries/restcountries@master/src/main/resources/countriesV3.1.json');
-      if (!res.ok) throw new Error();
-      countries = await res.json();
-      search('India');
+      if (res.ok) {
+        countries = await res.json();
+      }
     } catch {
-      showStatus('Unable to load country data. Please check your connection.');
+      // Fallback
     }
   }
 
