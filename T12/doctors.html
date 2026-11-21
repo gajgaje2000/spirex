@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CarePulse Hospital | Specialist Doctors</title>
+  <title>City Hospital | Doctors</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center gap-2.5 font-bold text-slate-900 text-sm sm:text-base">
         <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-extrabold text-sm shadow-sm">+</span>
-        <span>CarePulse <span class="text-blue-600">Hospital</span></span>
+        <span>City <span class="text-blue-600">Hospital</span></span>
       </a>
 
       <nav class="hidden md:flex items-center gap-1 text-xs font-semibold">
@@ -53,8 +53,8 @@
 
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">Our Medical Specialists</h1>
-        <p class="text-xs sm:text-sm text-slate-500 mt-1">Review physician credentials, availability, and book your visit</p>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">Available Doctors</h1>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Select a doctor to book your consultation appointment</p>
       </div>
 
       <!-- Department Filter Pills -->
@@ -71,105 +71,7 @@
 
     <!-- Doctors Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="doctors-grid">
-      <!-- Populated by app.js with pre-rendered fallback support -->
-      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-slate-300 transition flex flex-col justify-between">
-        <div>
-          <div class="flex items-start justify-between gap-2 mb-3">
-            <div>
-              <h3 class="text-sm font-bold text-slate-900">Dr. Sarah Jenkins</h3>
-              <p class="text-xs text-slate-500">Cardiology • MD, FACC</p>
-            </div>
-            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 flex-shrink-0">
-              Available Today
-            </span>
-          </div>
-
-          <div class="grid grid-cols-2 gap-2 text-xs py-2.5 border-y border-slate-100 text-slate-600 mb-3">
-            <div>
-              <span class="text-slate-400 block text-[10px]">Experience</span>
-              <span class="font-semibold text-slate-800">12 yrs exp</span>
-            </div>
-            <div>
-              <span class="text-slate-400 block text-[10px]">Consultation</span>
-              <span class="font-semibold text-slate-800">$80</span>
-            </div>
-            <div class="col-span-2">
-              <span class="text-slate-400 block text-[10px]">Schedule</span>
-              <span class="font-medium text-slate-700">Mon, Wed, Fri</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="appointment.html?doctor=1" class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs transition text-center shadow-sm block">
-          Book Appointment
-        </a>
-      </div>
-
-      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-slate-300 transition flex flex-col justify-between">
-        <div>
-          <div class="flex items-start justify-between gap-2 mb-3">
-            <div>
-              <h3 class="text-sm font-bold text-slate-900">Dr. David Chen</h3>
-              <p class="text-xs text-slate-500">Orthopedics • MS, Ortho</p>
-            </div>
-            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 flex-shrink-0">
-              Available Today
-            </span>
-          </div>
-
-          <div class="grid grid-cols-2 gap-2 text-xs py-2.5 border-y border-slate-100 text-slate-600 mb-3">
-            <div>
-              <span class="text-slate-400 block text-[10px]">Experience</span>
-              <span class="font-semibold text-slate-800">14 yrs exp</span>
-            </div>
-            <div>
-              <span class="text-slate-400 block text-[10px]">Consultation</span>
-              <span class="font-semibold text-slate-800">$70</span>
-            </div>
-            <div class="col-span-2">
-              <span class="text-slate-400 block text-[10px]">Schedule</span>
-              <span class="font-medium text-slate-700">Mon, Tue, Thu</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="appointment.html?doctor=2" class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs transition text-center shadow-sm block">
-          Book Appointment
-        </a>
-      </div>
-
-      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-slate-300 transition flex flex-col justify-between">
-        <div>
-          <div class="flex items-start justify-between gap-2 mb-3">
-            <div>
-              <h3 class="text-sm font-bold text-slate-900">Dr. Elena Rostova</h3>
-              <p class="text-xs text-slate-500">Pediatrics • MD, FAAP</p>
-            </div>
-            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 flex-shrink-0">
-              Available Tomorrow
-            </span>
-          </div>
-
-          <div class="grid grid-cols-2 gap-2 text-xs py-2.5 border-y border-slate-100 text-slate-600 mb-3">
-            <div>
-              <span class="text-slate-400 block text-[10px]">Experience</span>
-              <span class="font-semibold text-slate-800">9 yrs exp</span>
-            </div>
-            <div>
-              <span class="text-slate-400 block text-[10px]">Consultation</span>
-              <span class="font-semibold text-slate-800">$50</span>
-            </div>
-            <div class="col-span-2">
-              <span class="text-slate-400 block text-[10px]">Schedule</span>
-              <span class="font-medium text-slate-700">Mon - Fri</span>
-            </div>
-          </div>
-        </div>
-
-        <a href="appointment.html?doctor=3" class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs transition text-center shadow-sm block">
-          Book Appointment
-        </a>
-      </div>
+      <!-- Rendered by app.js -->
     </div>
 
   </main>
@@ -179,8 +81,8 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
         <span class="w-6 h-6 rounded bg-blue-600 text-white flex items-center justify-center font-bold text-xs">+</span>
-        <span class="font-bold text-slate-900">CarePulse Hospital</span>
-        <span>• 24/7 Outpatient Care</span>
+        <span class="font-bold text-slate-900">City Hospital</span>
+        <span>• Doctors Directory</span>
       </div>
       <div class="flex gap-4">
         <a href="index.html" class="hover:text-slate-900 transition">Home</a>
@@ -188,7 +90,7 @@
         <a href="doctors.html" class="hover:text-slate-900 transition">Doctors</a>
         <a href="appointment.html" class="hover:text-slate-900 transition">Book Appointment</a>
       </div>
-      <p>&copy; 2026 CarePulse Hospital. All rights reserved.</p>
+      <p>&copy; 2026 City Hospital. All rights reserved.</p>
     </div>
   </footer>
 

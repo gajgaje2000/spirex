@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CarePulse Hospital | Book Appointment</title>
+  <title>City Hospital | Book Appointment</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center gap-2.5 font-bold text-slate-900 text-sm sm:text-base">
         <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-extrabold text-sm shadow-sm">+</span>
-        <span>CarePulse <span class="text-blue-600">Hospital</span></span>
+        <span>City <span class="text-blue-600">Hospital</span></span>
       </a>
 
       <nav class="hidden md:flex items-center gap-1 text-xs font-semibold">
@@ -52,8 +52,8 @@
   <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-8">
 
     <div class="space-y-1">
-      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">Hospital Appointment Booking</h1>
-      <p class="text-xs sm:text-sm text-slate-500">Fill out patient information and choose your preferred doctor and consultation date</p>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">Book an Appointment</h1>
+      <p class="text-xs sm:text-sm text-slate-500">Fill in patient details to reserve a consultation slot</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
@@ -61,20 +61,20 @@
       <!-- Form (Col 7) -->
       <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4">
         <div class="border-b border-slate-100 pb-3">
-          <h2 class="text-sm font-bold text-slate-900">Patient Details &amp; Schedule</h2>
-          <p class="text-xs text-slate-500">Instant confirmation with your selected physician</p>
+          <h2 class="text-sm font-bold text-slate-900">Patient Details</h2>
+          <p class="text-xs text-slate-500">Choose your doctor, date, and preferred time</p>
         </div>
 
         <form id="appointment-form" class="space-y-3.5">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <div>
-              <label for="patient-name" class="block text-xs font-semibold text-slate-600 mb-1">Patient Full Name <span class="text-rose-500">*</span></label>
-              <input type="text" id="patient-name" placeholder="e.g. Rahul Sharma" required class="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-100 transition">
+              <label for="patient-name" class="block text-xs font-semibold text-slate-600 mb-1">Patient Name <span class="text-rose-500">*</span></label>
+              <input type="text" id="patient-name" placeholder="Enter patient name" required class="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-100 transition">
             </div>
 
             <div>
               <label for="patient-phone" class="block text-xs font-semibold text-slate-600 mb-1">Phone Number <span class="text-rose-500">*</span></label>
-              <input type="tel" id="patient-phone" placeholder="e.g. +91 98765 43210" required class="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-100 transition">
+              <input type="tel" id="patient-phone" placeholder="Enter phone number" required class="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-100 transition">
             </div>
           </div>
 
@@ -99,12 +99,12 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             <div>
-              <label for="appointment-date" class="block text-xs font-semibold text-slate-600 mb-1">Consultation Date <span class="text-rose-500">*</span></label>
+              <label for="appointment-date" class="block text-xs font-semibold text-slate-600 mb-1">Date <span class="text-rose-500">*</span></label>
               <input type="date" id="appointment-date" required class="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-100 transition">
             </div>
 
             <div>
-              <label for="time-slot" class="block text-xs font-semibold text-slate-600 mb-1">Preferred Time Slot <span class="text-rose-500">*</span></label>
+              <label for="time-slot" class="block text-xs font-semibold text-slate-600 mb-1">Time Slot <span class="text-rose-500">*</span></label>
               <select id="time-slot" required class="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-100 transition">
                 <option value="09:30 AM">09:30 AM</option>
                 <option value="11:00 AM" selected>11:00 AM</option>
@@ -127,8 +127,8 @@
       <div class="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4">
         <div class="flex items-center justify-between border-b border-slate-100 pb-3">
           <div>
-            <h2 class="text-sm font-bold text-slate-900">My Appointments</h2>
-            <p class="text-xs text-slate-500">Upcoming consultation records</p>
+            <h2 class="text-sm font-bold text-slate-900">Scheduled Appointments</h2>
+            <p class="text-xs text-slate-500">Booked consultations</p>
           </div>
           <span id="appointment-count" class="text-xs text-slate-500 font-semibold bg-slate-100 px-2 py-0.5 rounded-full">1 booked</span>
         </div>
@@ -160,8 +160,8 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
         <span class="w-6 h-6 rounded bg-blue-600 text-white flex items-center justify-center font-bold text-xs">+</span>
-        <span class="font-bold text-slate-900">CarePulse Hospital</span>
-        <span>• 24/7 Outpatient Care</span>
+        <span class="font-bold text-slate-900">City Hospital</span>
+        <span>• Appointments</span>
       </div>
       <div class="flex gap-4">
         <a href="index.html" class="hover:text-slate-900 transition">Home</a>
@@ -169,7 +169,7 @@
         <a href="doctors.html" class="hover:text-slate-900 transition">Doctors</a>
         <a href="appointment.html" class="hover:text-slate-900 transition">Book Appointment</a>
       </div>
-      <p>&copy; 2026 CarePulse Hospital. All rights reserved.</p>
+      <p>&copy; 2026 City Hospital. All rights reserved.</p>
     </div>
   </footer>
 
