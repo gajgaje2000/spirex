@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePulse Hospital | Clinical Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-['Plus_Jakarta_Sans',sans-serif]">
+
+  <!-- Shared Top Navigation -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2.5 font-bold text-slate-900 text-sm sm:text-base">
+        <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-extrabold text-sm shadow-sm">+</span>
+        <span>CarePulse <span class="text-blue-600">Hospital</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1 text-xs font-semibold">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">Home</a>
+        <a href="services.html" class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700">Services</a>
+        <a href="doctors.html" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">Doctors</a>
+        <a href="appointment.html" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">Book Appointment</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="appointment.html" class="hidden sm:inline-flex px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-xl shadow-sm transition">
+          Book Visit
+        </a>
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle Navigation" class="md:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg border border-slate-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 px-4 py-3 space-y-1 bg-white text-xs font-semibold text-slate-600">
+      <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Home</a>
+      <a href="services.html" class="block px-3 py-2 rounded-lg bg-blue-50 text-blue-700">Services</a>
+      <a href="doctors.html" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Doctors</a>
+      <a href="appointment.html" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Book Appointment</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-8">
+
+    <div class="space-y-1">
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">Clinical Services</h1>
+      <p class="text-xs sm:text-sm text-slate-500">Explore our specialized departments, treatments, and consultation rates</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- General Medicine -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between hover:border-slate-300 transition">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Primary Care</span>
+            <span class="text-sm font-bold text-slate-900">$40 / visit</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">General Medicine</h2>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+            Comprehensive primary healthcare, routine diagnostic checkups, management of viral fevers, diabetes, and hypertension.
+          </p>
+          <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+            <li>• Routine physical checkups</li>
+            <li>• Blood pressure &amp; sugar management</li>
+            <li>• Preventive healthcare counseling</li>
+          </ul>
+        </div>
+        <a href="appointment.html?service=General%20Medicine" class="mt-5 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs transition text-center shadow-sm block">
+          Book Consultation
+        </a>
+      </div>
+
+      <!-- Cardiology -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between hover:border-slate-300 transition">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2.5 py-1 rounded-md">Cardiovascular</span>
+            <span class="text-sm font-bold text-slate-900">$80 / visit</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">Cardiology</h2>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+            Cardiovascular health screenings, digital ECG tests, lipid profile evaluation, and chronic heart condition management.
+          </p>
+          <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+            <li>• Electrocardiogram (ECG) &amp; screening</li>
+            <li>• Coronary risk factor evaluation</li>
+            <li>• Long-term hypertension therapy</li>
+          </ul>
+        </div>
+        <a href="appointment.html?service=Cardiology" class="mt-5 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs transition text-center shadow-sm block">
+          Book Consultation
+        </a>
+      </div>
+
+      <!-- Pediatrics -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between hover:border-slate-300 transition">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">Child Health</span>
+            <span class="text-sm font-bold text-slate-900">$50 / visit</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">Pediatrics</h2>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+            Dedicated pediatric medical care for newborns, toddlers, and adolescents, including developmental monitoring.
+          </p>
+          <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+            <li>• Newborn &amp; infant health assessments</li>
+            <li>• Age-appropriate vaccination schedule</li>
+            <li>• Pediatric growth &amp; nutrition advice</li>
+          </ul>
+        </div>
+        <a href="appointment.html?service=Pediatrics" class="mt-5 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs transition text-center shadow-sm block">
+          Book Consultation
+        </a>
+      </div>
+
+      <!-- Orthopedics -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between hover:border-slate-300 transition">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-1 rounded-md">Joints &amp; Bones</span>
+            <span class="text-sm font-bold text-slate-900">$70 / visit</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">Orthopedics</h2>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+            Evaluation and physical rehabilitation of musculoskeletal conditions, athletic injuries, joint aches, and fractures.
+          </p>
+          <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+            <li>• Bone fractures &amp; sprain treatment</li>
+            <li>• Arthritis &amp; joint pain management</li>
+            <li>• Post-injury physical therapy guidance</li>
+          </ul>
+        </div>
+        <a href="appointment.html?service=Orthopedics" class="mt-5 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs transition text-center shadow-sm block">
+          Book Consultation
+        </a>
+      </div>
+
+      <!-- Neurology -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between hover:border-slate-300 transition">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2.5 py-1 rounded-md">Nerves &amp; Brain</span>
+            <span class="text-sm font-bold text-slate-900">$90 / visit</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">Neurology</h2>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+            Comprehensive diagnostic testing and clinical management for chronic migraines, sleep disorders, and nerve conditions.
+          </p>
+          <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+            <li>• Severe headaches &amp; migraine care</li>
+            <li>• Neuropathy &amp; reflex examination</li>
+            <li>• Central nervous system evaluations</li>
+          </ul>
+        </div>
+        <a href="appointment.html?service=Neurology" class="mt-5 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs transition text-center shadow-sm block">
+          Book Consultation
+        </a>
+      </div>
+
+      <!-- Dermatology -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between hover:border-slate-300 transition">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Skin Health</span>
+            <span class="text-sm font-bold text-slate-900">$65 / visit</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">Dermatology</h2>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+            Medical diagnosis and specialized treatments for acute allergic dermatitis, acne, eczema, and skin infections.
+          </p>
+          <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+            <li>• Clinical skin pathology exams</li>
+            <li>• Allergy patch testing &amp; relief</li>
+            <li>• Chronic eczema &amp; psoriasis therapy</li>
+          </ul>
+        </div>
+        <a href="appointment.html?service=Dermatology" class="mt-5 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-xs transition text-center shadow-sm block">
+          Book Consultation
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Service FAQ / Standards Card -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="space-y-1">
+        <h3 class="text-sm font-bold text-slate-900">All Consultations Include Initial Screening</h3>
+        <p class="text-xs text-slate-500">Every visit covers vital sign measurements, digital prescription, and consultation notes.</p>
+      </div>
+      <a href="doctors.html" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl transition whitespace-nowrap shadow-sm">
+        Find a Specialist Doctor &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Shared Minimal Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-16 py-6 text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded bg-blue-600 text-white flex items-center justify-center font-bold text-xs">+</span>
+        <span class="font-bold text-slate-900">CarePulse Hospital</span>
+        <span>• 24/7 Outpatient Care</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:text-slate-900 transition">Home</a>
+        <a href="services.html" class="hover:text-slate-900 transition">Services</a>
+        <a href="doctors.html" class="hover:text-slate-900 transition">Doctors</a>
+        <a href="appointment.html" class="hover:text-slate-900 transition">Book Appointment</a>
+      </div>
+      <p>&copy; 2026 CarePulse Hospital. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
