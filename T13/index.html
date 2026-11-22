@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Science College | Management Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen py-8 px-4 sm:px-6 lg:px-8 font-['Plus_Jakarta_Sans',sans-serif]">
+
+  <div class="max-w-6xl mx-auto space-y-6">
+
+    <!-- College Header -->
+    <header class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center font-extrabold text-xl shadow-sm flex-shrink-0">
+          C
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-xl font-bold tracking-tight text-slate-900">City Science College</h1>
+            <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">NAAC 'A' Grade</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-0.5">Affiliated to State University • Estd. 1998 • College Management Portal</p>
+        </div>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="flex items-center gap-4 text-xs border-t sm:border-t-0 sm:border-l border-slate-100 pt-3 sm:pt-0 sm:pl-5">
+        <div>
+          <span class="text-slate-400 block text-[10px] uppercase font-semibold">Departments</span>
+          <span class="font-extrabold text-slate-800 text-sm">4 Depts</span>
+        </div>
+        <div>
+          <span class="text-slate-400 block text-[10px] uppercase font-semibold">Faculty</span>
+          <span class="font-extrabold text-slate-800 text-sm">24 Staff</span>
+        </div>
+        <div>
+          <span class="text-slate-400 block text-[10px] uppercase font-semibold">Students</span>
+          <span id="header-student-count" class="font-extrabold text-blue-600 text-sm">730+</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs Bar -->
+    <nav class="bg-white border border-slate-200 rounded-xl p-1.5 shadow-sm flex items-center gap-1 overflow-x-auto" role="tablist" aria-label="College Portal Navigation">
+      <button type="button" role="tab" id="tab-btn-overview" aria-selected="true" class="tab-btn flex-1 min-w-[110px] py-2 px-3 text-xs font-semibold rounded-lg bg-blue-600 text-white transition text-center whitespace-nowrap">
+        Overview
+      </button>
+      <button type="button" role="tab" id="tab-btn-departments" aria-selected="false" class="tab-btn flex-1 min-w-[130px] py-2 px-3 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition text-center whitespace-nowrap">
+        Depts &amp; Courses
+      </button>
+      <button type="button" role="tab" id="tab-btn-faculty" aria-selected="false" class="tab-btn flex-1 min-w-[110px] py-2 px-3 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition text-center whitespace-nowrap">
+        Faculty
+      </button>
+      <button type="button" role="tab" id="tab-btn-students" aria-selected="false" class="tab-btn flex-1 min-w-[110px] py-2 px-3 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition text-center whitespace-nowrap">
+        Students
+      </button>
+      <button type="button" role="tab" id="tab-btn-events" aria-selected="false" class="tab-btn flex-1 min-w-[120px] py-2 px-3 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition text-center whitespace-nowrap">
+        Events &amp; Notices
+      </button>
+    </nav>
+
+    <!-- TAB 1: OVERVIEW PANEL -->
+    <div role="tabpanel" id="panel-overview" aria-labelledby="tab-btn-overview" class="space-y-6">
+      
+      <!-- Key Highlights Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-1">
+          <div class="text-[11px] font-bold text-blue-600 uppercase tracking-wider">Academic Excellence</div>
+          <div class="text-xl font-bold text-slate-900">4 Departments</div>
+          <p class="text-xs text-slate-500">Computer Science, IT, Electronics, and Mathematics.</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-1">
+          <div class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider">Undergraduate &amp; PG</div>
+          <div class="text-xl font-bold text-slate-900">6 Programs</div>
+          <p class="text-xs text-slate-500">Industry-aligned curriculum with practical lab training.</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-1">
+          <div class="text-[11px] font-bold text-purple-600 uppercase tracking-wider">Experienced Faculty</div>
+          <div class="text-xl font-bold text-slate-900">24 Professors</div>
+          <p class="text-xs text-slate-500">Ph.D. and M.Tech scholars dedicated to mentoring.</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-1">
+          <div class="text-[11px] font-bold text-amber-600 uppercase tracking-wider">Campus Facilities</div>
+          <div class="text-xl font-bold text-slate-900">Modern Campus</div>
+          <p class="text-xs text-slate-500">Central library, computer labs, and seminar halls.</p>
+        </div>
+      </div>
+
+      <!-- Two-column Overview: Notice Board & College Info -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left: Notice Board (7 cols) -->
+        <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div>
+              <h2 class="text-sm font-bold text-slate-900">College Notice Board</h2>
+              <p class="text-xs text-slate-500">Recent announcements and exam circulars</p>
+            </div>
+            <button type="button" onclick="switchTab('events')" class="text-xs font-semibold text-blue-600 hover:underline">
+              View all &rarr;
+            </button>
+          </div>
+
+          <div class="space-y-3" id="overview-notices">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Right: College Profile & Contact (5 cols) -->
+        <div class="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4">
+          <div class="border-b border-slate-100 pb-3">
+            <h2 class="text-sm font-bold text-slate-900">College Information</h2>
+            <p class="text-xs text-slate-500">Institutional facts and contact office</p>
+          </div>
+
+          <div class="space-y-3 text-xs text-slate-600">
+            <div class="flex justify-between py-1.5 border-b border-slate-100">
+              <span class="text-slate-400">Institution:</span>
+              <span class="font-semibold text-slate-800">City Science College</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-slate-100">
+              <span class="text-slate-400">Affiliation:</span>
+              <span class="font-semibold text-slate-800">V.N.S.G. University</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-slate-100">
+              <span class="text-slate-400">Accreditation:</span>
+              <span class="font-semibold text-emerald-700">NAAC 'A' Grade (3.24 CGPA)</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-slate-100">
+              <span class="text-slate-400">Campus Area:</span>
+              <span class="font-semibold text-slate-800">12 Acres (Wi-Fi Enabled)</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-slate-100">
+              <span class="text-slate-400">Working Hours:</span>
+              <span class="font-semibold text-slate-800">Mon - Sat (08:00 AM - 04:30 PM)</span>
+            </div>
+            <div class="flex justify-between py-1.5 border-b border-slate-100">
+              <span class="text-slate-400">Email:</span>
+              <span class="font-semibold text-blue-600">contact@citycollege.edu</span>
+            </div>
+            <div class="flex justify-between py-1.5">
+              <span class="text-slate-400">Campus Address:</span>
+              <span class="font-semibold text-slate-800 text-right">Civil Lines, Surat, Gujarat</span>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button type="button" onclick="switchTab('departments')" class="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-xs transition shadow-sm text-center">
+              Explore Academic Departments &rarr;
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB 2: DEPARTMENTS & COURSES PANEL -->
+    <div role="tabpanel" id="panel-departments" aria-labelledby="tab-btn-departments" class="hidden space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-base font-bold text-slate-900">Academic Departments &amp; Degree Programs</h2>
+          <p class="text-xs text-slate-500">Comprehensive list of departments, syllabus duration, and intake capacity</p>
+        </div>
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">4 Departments</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="departments-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- TAB 3: FACULTY PANEL -->
+    <div role="tabpanel" id="panel-faculty" aria-labelledby="tab-btn-faculty" class="hidden space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-base font-bold text-slate-900">Faculty Directory</h2>
+          <p class="text-xs text-slate-500">Department heads, professors, and teaching staff credentials</p>
+        </div>
+
+        <!-- Faculty Filter -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0" id="faculty-filter-bar">
+          <button type="button" data-dept="All" class="faculty-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white transition whitespace-nowrap">All</button>
+          <button type="button" data-dept="Computer Science" class="faculty-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition whitespace-nowrap">Computer Science</button>
+          <button type="button" data-dept="Information Technology" class="faculty-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition whitespace-nowrap">IT</button>
+          <button type="button" data-dept="Electronics" class="faculty-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition whitespace-nowrap">Electronics</button>
+          <button type="button" data-dept="Mathematics" class="faculty-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition whitespace-nowrap">Mathematics</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="faculty-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- TAB 4: STUDENTS PANEL -->
+    <div role="tabpanel" id="panel-students" aria-labelledby="tab-btn-students" class="hidden space-y-6">
+      
+      <!-- Top Bar: Search, Department Filter & Add Button -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+        <div class="flex flex-1 items-center gap-3">
+          <div class="relative flex-1 max-w-xs">
+            <input type="text" id="student-search" placeholder="Search by name or roll no..." class="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition">
+            <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+          <select id="student-dept-filter" class="px-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition">
+            <option value="All">All Departments</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Mathematics">Mathematics</option>
+          </select>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <span id="student-count-badge" class="text-xs font-semibold text-slate-500">6 Students</span>
+          <button type="button" id="toggle-add-student-btn" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-xs transition shadow-sm whitespace-nowrap">
+            + Add Student
+          </button>
+        </div>
+      </div>
+
+      <!-- Add Student Inline Form (Hidden by default) -->
+      <div id="add-student-card" class="hidden bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+          <h3 class="text-xs font-bold text-slate-900">Register New Student</h3>
+          <button type="button" id="close-add-student" class="text-xs text-slate-400 hover:text-slate-600 font-bold">&times; Close</button>
+        </div>
+        <form id="add-student-form" class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+          <input type="text" id="new-roll" placeholder="Roll No (e.g. CS-2403)" required class="px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-600">
+          <input type="text" id="new-name" placeholder="Full Name" required class="px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-600">
+          <select id="new-dept" required class="px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-600">
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Mathematics">Mathematics</option>
+          </select>
+          <input type="text" id="new-sem" placeholder="Semester (e.g. Sem 1)" required class="px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-lg outline-none focus:border-blue-600">
+          <button type="submit" class="px-4 py-1.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-lg text-xs transition">
+            Save Record
+          </button>
+        </form>
+      </div>
+
+      <!-- Students Table -->
+      <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-slate-50/70 border-b border-slate-200 text-slate-500 font-semibold uppercase tracking-wider text-[11px]">
+                <th class="py-3 px-4">Roll Number</th>
+                <th class="py-3 px-4">Student Name</th>
+                <th class="py-3 px-4">Department</th>
+                <th class="py-3 px-4">Program</th>
+                <th class="py-3 px-4">Semester</th>
+                <th class="py-3 px-4 text-center">Status</th>
+                <th class="py-3 px-4 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody id="students-tbody" class="divide-y divide-slate-100 text-slate-700">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB 5: EVENTS & NOTICES PANEL -->
+    <div role="tabpanel" id="panel-events" aria-labelledby="tab-btn-events" class="hidden space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-base font-bold text-slate-900">Campus Events &amp; Official Notices</h2>
+          <p class="text-xs text-slate-500">Upcoming seminars, workshops, sports meets, and exam notifications</p>
+        </div>
+
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0" id="events-filter-bar">
+          <button type="button" data-type="All" class="event-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white transition whitespace-nowrap">All</button>
+          <button type="button" data-type="Event" class="event-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition whitespace-nowrap">Events</button>
+          <button type="button" data-type="Academic" class="event-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition whitespace-nowrap">Academic</button>
+          <button type="button" data-type="Seminar" class="event-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition whitespace-nowrap">Seminars</button>
+          <button type="button" data-type="Sports" class="event-filter px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition whitespace-nowrap">Sports</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="events-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
