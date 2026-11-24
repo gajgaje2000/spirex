@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Portal UI | Find Careers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen py-8 px-4 sm:px-6 lg:px-8 font-['Plus_Jakarta_Sans',sans-serif]">
+
+  <div class="max-w-6xl mx-auto space-y-6">
+
+    <!-- Header Section -->
+    <header class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center font-extrabold text-xl shadow-sm flex-shrink-0">
+          JP
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-xl font-bold tracking-tight text-slate-900">Job Portal</h1>
+            <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Verified Openings</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-0.5">Explore career opportunities across engineering, product, and design</p>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="flex items-center gap-4 text-xs border-t sm:border-t-0 sm:border-l border-slate-100 pt-3 sm:pt-0 sm:pl-5">
+        <div>
+          <span class="text-slate-400 block text-[10px] uppercase font-semibold">Available</span>
+          <span id="stat-total-jobs" class="font-extrabold text-slate-800 text-sm">10 Jobs</span>
+        </div>
+        <div>
+          <span class="text-slate-400 block text-[10px] uppercase font-semibold">Saved</span>
+          <span id="stat-saved-jobs" class="font-extrabold text-blue-600 text-sm">0 Saved</span>
+        </div>
+        <div>
+          <span class="text-slate-400 block text-[10px] uppercase font-semibold">Applied</span>
+          <span id="stat-applied-jobs" class="font-extrabold text-emerald-600 text-sm">0 Applied</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search & Filter Card -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
+      
+      <!-- Primary Inputs Row -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+        <!-- Search Keyword -->
+        <div class="md:col-span-4 relative">
+          <input type="text" id="search-keyword" placeholder="Job title, keywords, or company..." class="w-full pl-8 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition">
+          <svg class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+
+        <!-- Location Filter -->
+        <div class="md:col-span-3">
+          <select id="filter-location" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition text-slate-700">
+            <option value="All">All Locations</option>
+            <option value="Remote">Remote</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Surat">Surat</option>
+            <option value="Chennai">Chennai</option>
+          </select>
+        </div>
+
+        <!-- Job Type Filter -->
+        <div class="md:col-span-2">
+          <select id="filter-type" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition text-slate-700">
+            <option value="All">All Job Types</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+            <option value="Contract">Contract</option>
+          </select>
+        </div>
+
+        <!-- Experience Level Filter -->
+        <div class="md:col-span-2">
+          <select id="filter-exp" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition text-slate-700">
+            <option value="All">All Experience</option>
+            <option value="Entry">Entry (0-2 yrs)</option>
+            <option value="Mid">Mid (2-5 yrs)</option>
+            <option value="Senior">Senior (5+ yrs)</option>
+          </select>
+        </div>
+
+        <!-- Reset Button -->
+        <div class="md:col-span-1">
+          <button type="button" id="reset-filters-btn" title="Reset all search filters" class="w-full py-2 px-2 text-xs text-slate-600 hover:text-slate-900 font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 transition text-center whitespace-nowrap">
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Category Pills -->
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs" id="quick-category-pills">
+        <button type="button" data-category="All" class="cat-pill px-3 py-1.5 font-semibold rounded-lg bg-blue-600 text-white transition whitespace-nowrap">
+          All Roles
+        </button>
+        <button type="button" data-category="Remote" class="cat-pill px-3 py-1.5 font-semibold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">
+          Remote Only
+        </button>
+        <button type="button" data-category="Engineering" class="cat-pill px-3 py-1.5 font-semibold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">
+          Engineering
+        </button>
+        <button type="button" data-category="Design" class="cat-pill px-3 py-1.5 font-semibold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">
+          Design
+        </button>
+        <button type="button" data-category="Data" class="cat-pill px-3 py-1.5 font-semibold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">
+          Data &amp; Cloud
+        </button>
+        <button type="button" data-category="Saved" class="cat-pill px-3 py-1.5 font-semibold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition whitespace-nowrap">
+          Saved Jobs (<span id="pill-saved-count">0</span>)
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Results Count Bar -->
+    <div class="flex items-center justify-between text-xs text-slate-500 px-1">
+      <div>
+        Showing <span id="results-count" class="font-bold text-slate-900">10</span> open job opportunities
+      </div>
+      <div class="flex items-center gap-2">
+        <label for="sort-by" class="font-medium text-slate-400">Sort by:</label>
+        <select id="sort-by" class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-xs outline-none focus:border-blue-600 text-slate-700">
+          <option value="recent">Most Recent</option>
+          <option value="salary-high">Salary: High to Low</option>
+          <option value="title">Job Title (A-Z)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Jobs Grid Container -->
+    <div id="jobs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Populated dynamically by JS -->
+    </div>
+
+    <!-- No Results State -->
+    <div id="no-jobs-state" class="hidden bg-white border border-slate-200 rounded-2xl p-12 text-center space-y-3 shadow-sm">
+      <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto text-xl font-bold">
+        ?
+      </div>
+      <h3 class="text-sm font-bold text-slate-800">No matching job listings found</h3>
+      <p class="text-xs text-slate-500 max-w-md mx-auto">
+        We couldn't find any job opportunities matching your current search terms or filters. Try adjusting your keywords or clearing selected filters.
+      </p>
+      <button type="button" onclick="document.getElementById('reset-filters-btn').click()" class="mt-2 text-xs text-blue-600 font-semibold hover:underline">
+        Clear all filters &rarr;
+      </button>
+    </div>
+
+  </div>
+
+  <!-- NATIVE MODAL 1: JOB DETAILS -->
+  <dialog id="job-details-dialog" closedby="any" aria-labelledby="dialog-job-title" class="bg-white rounded-2xl border border-slate-200 p-0 shadow-2xl max-w-2xl w-full mx-auto my-auto text-slate-900">
+    <div class="p-6 space-y-5 max-h-[85vh] overflow-y-auto">
+
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+        <div class="flex items-start gap-3.5">
+          <div id="detail-company-logo" class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 border border-blue-100 font-extrabold text-base flex items-center justify-center flex-shrink-0">
+            R
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span id="detail-badge-type" class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">Full-time</span>
+              <span id="detail-badge-mode" class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Remote</span>
+            </div>
+            <h2 id="dialog-job-title" class="text-lg font-bold text-slate-900 mt-1">Senior Frontend Engineer</h2>
+            <p id="detail-company-location" class="text-xs text-slate-500 font-medium">Razorpay • Bengaluru, Karnataka</p>
+          </div>
+        </div>
+        <form method="dialog">
+          <button type="submit" aria-label="Close dialog" class="w-8 h-8 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 flex items-center justify-center font-bold text-base transition">
+            &times;
+          </button>
+        </form>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="grid grid-cols-3 gap-3 bg-slate-50 border border-slate-100 rounded-xl p-3 text-xs text-center">
+        <div>
+          <span class="text-slate-400 block text-[10px] uppercase font-semibold">Annual Compensation</span>
+          <span id="detail-salary" class="font-extrabold text-slate-900">₹18 - 28 LPA</span>
+        </div>
+        <div>
+          <span class="text-slate-400 block text-[10px] uppercase font-semibold">Experience Required</span>
+          <span id="detail-experience" class="font-extrabold text-slate-900">3 - 5 Years</span>
+        </div>
+        <div>
+          <span class="text-slate-400 block text-[10px] uppercase font-semibold">Posted</span>
+          <span id="detail-posted" class="font-extrabold text-slate-600">2 days ago</span>
+        </div>
+      </div>
+
+      <!-- Role Overview -->
+      <div class="space-y-2">
+        <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Role Overview</h3>
+        <p id="detail-desc" class="text-xs text-slate-600 leading-relaxed"></p>
+      </div>
+
+      <!-- Key Responsibilities -->
+      <div class="space-y-2">
+        <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Key Responsibilities</h3>
+        <ul id="detail-responsibilities" class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 leading-relaxed"></ul>
+      </div>
+
+      <!-- Skills Required -->
+      <div class="space-y-2">
+        <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Skills &amp; Technologies</h3>
+        <div id="detail-skills" class="flex flex-wrap gap-1.5 pt-1"></div>
+      </div>
+
+      <!-- Benefits & Perks -->
+      <div class="space-y-2">
+        <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Benefits &amp; Perks</h3>
+        <ul id="detail-perks" class="text-xs text-slate-600 space-y-1.5 list-disc pl-4 leading-relaxed"></ul>
+      </div>
+
+      <!-- About Company -->
+      <div class="space-y-1 pt-1 bg-slate-50/60 border border-slate-100 rounded-xl p-3 text-xs">
+        <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">About Company</span>
+        <p id="detail-about-company" class="text-slate-600 leading-relaxed"></p>
+      </div>
+
+      <!-- Modal Footer Action Buttons -->
+      <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+        <button type="button" id="detail-bookmark-btn" class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-lg transition">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+          </svg>
+          <span id="detail-bookmark-text">Save Job</span>
+        </button>
+
+        <div class="flex items-center gap-2">
+          <form method="dialog">
+            <button type="submit" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-lg transition">
+              Close
+            </button>
+          </form>
+          <button type="button" id="detail-apply-btn" class="px-5 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition shadow-sm">
+            Easy Apply
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- NATIVE MODAL 2: QUICK APPLY -->
+  <dialog id="apply-dialog" closedby="any" aria-labelledby="dialog-apply-title" class="bg-white rounded-2xl border border-slate-200 p-0 shadow-2xl max-w-md w-full mx-auto my-auto text-slate-900">
+    <div class="p-6 space-y-4 max-h-[85vh] overflow-y-auto">
+
+      <div class="flex items-start justify-between border-b border-slate-100 pb-3">
+        <div>
+          <h2 id="dialog-apply-title" class="text-base font-bold text-slate-900">Submit Application</h2>
+          <p id="apply-job-badge" class="text-xs text-blue-600 font-semibold mt-0.5">Role at Company</p>
+        </div>
+        <form method="dialog">
+          <button type="submit" aria-label="Close dialog" class="w-8 h-8 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 flex items-center justify-center font-bold text-base transition">
+            &times;
+          </button>
+        </form>
+      </div>
+
+      <form id="apply-job-form" class="space-y-3">
+        <input type="hidden" id="apply-form-job-id" value="">
+
+        <div>
+          <label for="apply-name" class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
+          <input type="text" id="apply-name" required placeholder="e.g. Jenish Gajera" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="apply-email" class="block text-xs font-semibold text-slate-700 mb-1">Email Address *</label>
+            <input type="email" id="apply-email" required placeholder="you@example.com" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition">
+          </div>
+          <div>
+            <label for="apply-phone" class="block text-xs font-semibold text-slate-700 mb-1">Phone Number *</label>
+            <input type="tel" id="apply-phone" required placeholder="+91 98765 43210" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="apply-exp" class="block text-xs font-semibold text-slate-700 mb-1">Experience *</label>
+            <select id="apply-exp" required class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition text-slate-700">
+              <option value="Fresher / < 1 yr">Fresher / &lt; 1 yr</option>
+              <option value="1 - 3 yrs">1 - 3 yrs</option>
+              <option value="3 - 5 yrs">3 - 5 yrs</option>
+              <option value="5+ yrs">5+ yrs</option>
+            </select>
+          </div>
+          <div>
+            <label for="apply-notice" class="block text-xs font-semibold text-slate-700 mb-1">Notice Period</label>
+            <select id="apply-notice" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition text-slate-700">
+              <option value="Immediate">Immediate</option>
+              <option value="15 Days">15 Days</option>
+              <option value="30 Days">30 Days</option>
+              <option value="60+ Days">60+ Days</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="apply-link" class="block text-xs font-semibold text-slate-700 mb-1">Portfolio / LinkedIn / GitHub</label>
+          <input type="url" id="apply-link" placeholder="https://linkedin.com/in/username or portfolio link" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition">
+        </div>
+
+        <div>
+          <label for="apply-note" class="block text-xs font-semibold text-slate-700 mb-1">Cover Note</label>
+          <textarea id="apply-note" rows="2" placeholder="Brief note highlighting your relevant projects or skills..." class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-blue-600 focus:bg-white transition resize-none"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+          <button type="button" onclick="document.getElementById('apply-dialog').close()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-lg transition">
+            Cancel
+          </button>
+          <button type="submit" class="px-5 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition shadow-sm">
+            Send Application
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </dialog>
+
+  <!-- Notification Toast Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
