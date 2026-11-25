@@ -115,43 +115,43 @@
     }
   ];
 
-  // --- Gallery Features Dataset ---
+  // --- Gallery Features Dataset with Local Images ---
   const galleryItems = [
     {
-      title: 'Open-Air Rooftop Terrace',
+      title: 'Open-Air Rooftop Ambiance',
       tag: 'Ambiance',
-      desc: 'Ambient evening dining with twilight city views and warm fairy lighting.',
-      color: 'from-amber-700 to-stone-800'
+      desc: 'Twilight city views, warm ambient lighting, and acoustic sessions.',
+      image: 'assets/images/ambiance.jpg'
     },
     {
       title: 'Wood-Fired Hearth Craft',
       tag: 'Kitchen',
-      desc: 'Hand-stretched sourdough pizzas baked at 450°C in our custom brick oven.',
-      color: 'from-orange-800 to-stone-900'
+      desc: 'Hand-stretched sourdough pizzas baked at 450°C in our brick oven.',
+      image: 'assets/images/pizza.jpg'
     },
     {
-      title: 'Signature Burrata & Fig Plate',
+      title: 'Signature Burrata & Fig Salad',
       tag: 'Culinary',
-      desc: 'Creamy burrata, fresh organic figs, and 12-year balsamic glaze.',
-      color: 'from-emerald-800 to-stone-900'
+      desc: 'Creamy burrata, fresh figs, arugula, and aged balsamic glaze.',
+      image: 'assets/images/salad.jpg'
     },
     {
       title: 'Private Celebration Alcove',
       tag: 'Events',
-      desc: 'Intimate space for birthday dinners and family gatherings.',
-      color: 'from-stone-700 to-stone-900'
+      desc: 'Intimate space for birthday dinners and family milestone gatherings.',
+      image: 'assets/images/private_dining.jpg'
     },
     {
       title: 'Botanical Craft Mocktails',
       tag: 'Bar',
       desc: 'Fresh herbal syrups, cold-pressed citrus, and smoked aromatics.',
-      color: 'from-rose-800 to-stone-900'
+      image: 'assets/images/mocktail.jpg'
     },
     {
-      title: 'Sunday Brunch Tasting Table',
-      tag: 'Experience',
-      desc: 'Multi-course weekend spread with mezze boards and fresh bakes.',
-      color: 'from-amber-800 to-stone-900'
+      title: 'Artisanal Dessert Platter',
+      tag: 'Pastry',
+      desc: 'Saffron panna cotta, dark chocolate ganache, and seasonal bakes.',
+      image: 'assets/images/dessert.jpg'
     }
   ];
 
@@ -168,7 +168,7 @@
       : menuItems.filter(item => item.category === activeMenuCategory);
 
     menuGrid.innerHTML = filtered.map(item => `
-      <div class="bg-white border border-stone-200 rounded-2xl p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between gap-3 group">
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between gap-3 group">
         <div class="space-y-2">
           
           <div class="flex items-start justify-between gap-2">
@@ -178,30 +178,30 @@
               }">
                 <span class="w-1.5 h-1.5 rounded-full ${item.diet === 'veg' ? 'bg-emerald-600' : 'bg-rose-600'}"></span>
               </span>
-              <span class="text-[10px] uppercase font-bold text-stone-400 tracking-wider">${item.category}</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">${item.category}</span>
             </div>
 
             ${item.badge ? `
-              <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
                 ${item.badge}
               </span>
             ` : ''}
           </div>
 
           <div>
-            <h3 class="text-sm font-bold text-stone-900 group-hover:text-amber-700 transition leading-snug">
+            <h3 class="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition leading-snug">
               ${item.title}
             </h3>
-            <p class="text-xs text-stone-500 mt-1 leading-relaxed line-clamp-2">
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed line-clamp-2">
               ${item.description}
             </p>
           </div>
 
         </div>
 
-        <div class="pt-3 border-t border-stone-100 flex items-center justify-between">
-          <span class="text-sm font-extrabold text-stone-900">${item.price}</span>
-          <a href="#booking" class="text-[11px] font-semibold text-amber-700 hover:text-amber-900 transition">
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-sm font-extrabold text-slate-900">${item.price}</span>
+          <a href="#booking" class="text-[11px] font-semibold text-blue-600 hover:text-blue-800 transition">
             Reserve to Taste &rarr;
           </a>
         </div>
@@ -214,34 +214,37 @@
       activeMenuCategory = btn.getAttribute('data-cat');
       menuTabs.forEach(b => {
         if (b === btn) {
-          b.className = 'menu-tab px-3 py-1.5 text-xs font-semibold rounded-lg bg-stone-900 text-white transition whitespace-nowrap shadow-xs';
+          b.className = 'menu-tab px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white transition whitespace-nowrap shadow-sm';
         } else {
-          b.className = 'menu-tab px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-stone-200 text-stone-600 hover:bg-stone-100 transition whitespace-nowrap';
+          b.className = 'menu-tab px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition whitespace-nowrap';
         }
       });
       renderMenu();
     });
   });
 
-  // --- Render Gallery Items ---
+  // --- Render Gallery Items with Real Local Images ---
   const galleryGrid = document.getElementById('gallery-grid');
   function renderGallery() {
     if (!galleryGrid) return;
 
     galleryGrid.innerHTML = galleryItems.map(item => `
-      <div class="rounded-2xl border border-stone-200 overflow-hidden shadow-xs group bg-white flex flex-col justify-between">
-        <div class="h-44 bg-gradient-to-br ${item.color} p-4 flex flex-col justify-between text-white relative">
-          <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md self-start">
+      <div class="rounded-2xl border border-slate-200 overflow-hidden shadow-xs group bg-white flex flex-col justify-between">
+        <div class="h-48 overflow-hidden relative">
+          <img src="${item.image}" alt="${item.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-950/70 text-white backdrop-blur-xs">
             ${item.tag}
           </span>
-          <div class="space-y-0.5">
-            <h4 class="text-sm font-bold text-white leading-tight drop-shadow-sm">${item.title}</h4>
-            <p class="text-[11px] text-stone-200 line-clamp-1 drop-shadow-xs">${item.desc}</p>
-          </div>
         </div>
-        <div class="p-4 flex items-center justify-between text-xs text-stone-600 bg-white">
-          <span class="font-medium text-[11px] text-stone-500">The Olive Bistro • Surat</span>
-          <span class="text-amber-700 font-bold text-[11px]">View Experience &rarr;</span>
+        <div class="p-4 flex flex-col justify-between gap-2 bg-white flex-1">
+          <div>
+            <h4 class="text-sm font-bold text-slate-900 leading-tight">${item.title}</h4>
+            <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">${item.desc}</p>
+          </div>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+            <span class="font-medium text-slate-400">The Olive Bistro • Surat</span>
+            <a href="#booking" class="text-blue-600 font-bold hover:underline">Book Visit &rarr;</a>
+          </div>
         </div>
       </div>
     `).join('');
@@ -315,9 +318,9 @@
 
       timeSlotButtons.forEach(b => {
         if (b === btn) {
-          b.className = 'slot-btn py-2 text-xs font-semibold rounded-lg border border-amber-600 bg-amber-600 text-white transition text-center shadow-xs';
+          b.className = 'slot-btn py-2 text-xs font-semibold rounded-lg border border-blue-600 bg-blue-600 text-white transition text-center shadow-xs';
         } else {
-          b.className = 'slot-btn py-2 text-xs font-semibold rounded-lg border border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100 transition text-center';
+          b.className = 'slot-btn py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition text-center';
         }
       });
 
