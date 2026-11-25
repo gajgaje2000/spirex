@@ -1,161 +1,156 @@
-// The Olive Bistro - Interactive Logic
-
 (function () {
   'use strict';
 
-  // --- Menu Selections Dataset ---
   const menuItems = [
     {
       id: 1,
-      title: 'Truffle Edamame Hummus & Warm Pita',
+      title: 'Paneer Tikka',
       category: 'starters',
-      price: '₹380',
+      price: '₹260',
       diet: 'veg',
-      badge: 'Bestseller',
-      description: 'Silky whipped chickpeas and edamame, infused with black truffle oil and toasted sesame, served with house-baked wood-fired pita.'
+      badge: 'Popular',
+      description: 'Grilled cottage cheese cubes marinated in yogurt, ginger, garlic, and Indian spices.'
     },
     {
       id: 2,
-      title: 'Crispy Zucchini Blossoms with Herbed Ricotta',
+      title: 'Crispy Veg Manchurian',
       category: 'starters',
-      price: '₹420',
+      price: '₹220',
       diet: 'veg',
-      badge: 'Seasonal',
-      description: 'Delicate organic blossoms stuffed with whipped lemon ricotta, mint, and sea salt, flash-fried in light sparkling batter.'
+      badge: 'Popular',
+      description: 'Fried mixed-vegetable balls tossed in spicy garlic soy sauce with spring onions.'
     },
     {
       id: 3,
-      title: 'Chargrilled Harissa Chicken Skewers',
+      title: 'Tandoori Chicken (Half)',
       category: 'starters',
-      price: '₹490',
+      price: '₹340',
       diet: 'non-veg',
-      badge: 'Popular',
-      description: 'Tender chicken marinated in roasted red pepper harissa, cumin, and garlic, served over garlic labneh with pickled onions.'
+      badge: 'Special',
+      description: 'Classic roasted chicken marinated in traditional spices and served with mint chutney.'
     },
     {
       id: 4,
-      title: 'Smoked Burrata & Fig Salad',
+      title: 'Fresh Garden Salad',
       category: 'starters',
-      price: '₹460',
+      price: '₹180',
       diet: 'veg',
-      badge: "Chef's Special",
-      description: 'Creamy artisanal burrata paired with fresh sweet figs, baby arugula, crushed walnuts, and a 12-year aged balsamic drizzle.'
+      badge: 'Fresh',
+      description: 'Crisp cucumber, tomatoes, lettuce, olives, and toasted seeds with light lemon dressing.'
     },
     {
       id: 5,
-      title: 'Wild Mushroom & Truffle Flatbread',
+      title: 'Margherita Pizza',
       category: 'mains',
-      price: '₹560',
+      price: '₹310',
       diet: 'veg',
-      badge: 'Wood-Fired',
-      description: 'Slow-fermented sourdough crust topped with roasted portobello, porcini cream, fresh thyme, and smoked scamorza cheese.'
+      badge: 'Popular',
+      description: 'Thin crust baked pizza topped with fresh tomato sauce, mozzarella cheese, and basil.'
     },
     {
       id: 6,
-      title: 'Wood-Fired Roasted Bell Pepper & Pesto Pizza',
+      title: 'Paneer Butter Masala',
       category: 'mains',
-      price: '₹520',
+      price: '₹290',
       diet: 'veg',
-      badge: 'Wood-Fired',
-      description: 'San Marzano tomato base, char-grilled bell peppers, pine nut basil pesto, buffalo mozzarella, and fresh basil leaves.'
+      badge: 'Bestseller',
+      description: 'Soft paneer cubes cooked in rich creamy tomato and butter gravy, served hot.'
     },
     {
       id: 7,
-      title: 'Slow-Cooked Moroccan Lamb Tagine',
+      title: 'Dal Tadka & Jeera Rice',
       category: 'mains',
-      price: '₹680',
-      diet: 'non-veg',
-      badge: 'Signature',
-      description: 'Braised tender lamb shoulder in aromatic Ras el Hanout spices, apricots, and toasted almonds, served with fluffy saffron couscous.'
+      price: '₹240',
+      diet: 'veg',
+      badge: 'Combo',
+      description: 'Yellow lentils tempered with cumin, garlic, and ghee, served alongside steamed jeera rice.'
     },
     {
       id: 8,
-      title: 'Saffron Risotto with Charred Asparagus',
+      title: 'Butter Chicken',
       category: 'mains',
-      price: '₹540',
-      diet: 'veg',
-      badge: 'Signature',
-      description: 'Carnaroli rice slow-simmered with Kashmiri saffron broth, aged parmesan, lemon zest, and grilled tender asparagus spears.'
+      price: '₹360',
+      diet: 'non-veg',
+      badge: 'Bestseller',
+      description: 'Tender boneless chicken simmered in spiced butter-tomato gravy with fresh cream.'
     },
     {
       id: 9,
-      title: 'Saffron & Pistachio Panna Cotta',
+      title: 'Gulab Jamun (2 Pcs)',
       category: 'desserts',
-      price: '₹340',
+      price: '₹110',
       diet: 'veg',
-      badge: 'Bestseller',
-      description: 'Delicate chilled cream flavored with organic saffron and green cardamom, topped with wild rose reduction and slivered pistachios.'
+      badge: 'Classic',
+      description: 'Warm soft milk dumplings soaked in lightly scented cardamom sugar syrup.'
     },
     {
       id: 10,
-      title: 'Dark Chocolate Olive Oil Ganache Cake',
+      title: 'Chocolate Brownie with Ice Cream',
       category: 'desserts',
-      price: '₹380',
+      price: '₹180',
       diet: 'veg',
-      badge: "Chef's Pick",
-      description: 'Decadent 70% dark chocolate sponge finished with cold-pressed extra virgin olive oil, Maldon sea salt, and espresso cream.'
+      badge: 'Popular',
+      description: 'Warm baked chocolate brownie served with a scoop of vanilla ice cream and chocolate sauce.'
     },
     {
       id: 11,
-      title: 'Rosemary Grapefruit Sparkler',
+      title: 'Fresh Lime Soda',
       category: 'beverages',
-      price: '₹260',
+      price: '₹90',
       diet: 'veg',
-      badge: 'Refreshing',
-      description: 'Fresh pink grapefruit juice, torched garden rosemary syrup, tonic water, and crushed pink peppercorns.'
+      badge: 'Fresh',
+      description: 'Chilled sparkling lemon drink prepared sweet, salted, or mixed with mint leaves.'
     },
     {
       id: 12,
-      title: 'Smoked Orange & Basil Mojito',
+      title: 'Mango Lassi',
       category: 'beverages',
-      price: '₹280',
+      price: '₹130',
       diet: 'veg',
-      badge: 'Handcrafted',
-      description: 'Charred orange wheels muddled with sweet Italian basil, fresh lime juice, sparkling soda, and smoked cedar essence.'
+      badge: 'Special',
+      description: 'Thick chilled yogurt drink blended with sweet ripe mango pulp and crushed cardamom.'
     }
   ];
 
-  // --- Gallery Features Dataset with Local Images ---
   const galleryItems = [
     {
-      title: 'Open-Air Rooftop Ambiance',
-      tag: 'Ambiance',
-      desc: 'Twilight city views, warm ambient lighting, and acoustic sessions.',
+      title: 'Main Dining Hall',
+      tag: 'Dining',
+      desc: 'Spacious indoor seating arranged for families and group dinners.',
       image: 'assets/images/ambiance.jpg'
     },
     {
-      title: 'Wood-Fired Hearth Craft',
+      title: 'Fresh Baked Pizza',
       tag: 'Kitchen',
-      desc: 'Hand-stretched sourdough pizzas baked at 450°C in our brick oven.',
+      desc: 'Hot thin-crust pizzas prepared fresh to order.',
       image: 'assets/images/pizza.jpg'
     },
     {
-      title: 'Signature Burrata & Fig Salad',
-      tag: 'Culinary',
-      desc: 'Creamy burrata, fresh figs, arugula, and aged balsamic glaze.',
+      title: 'Garden Fresh Salad',
+      tag: 'Starters',
+      desc: 'Seasonal vegetables and greens served chilled.',
       image: 'assets/images/salad.jpg'
     },
     {
-      title: 'Private Celebration Alcove',
-      tag: 'Events',
-      desc: 'Intimate space for birthday dinners and family milestone gatherings.',
+      title: 'Family Table Setup',
+      tag: 'Seating',
+      desc: 'Comfortable tables reserved for evening gatherings and birthdays.',
       image: 'assets/images/private_dining.jpg'
     },
     {
-      title: 'Botanical Craft Mocktails',
-      tag: 'Bar',
-      desc: 'Fresh herbal syrups, cold-pressed citrus, and smoked aromatics.',
+      title: 'Cold Drinks & Coolers',
+      tag: 'Drinks',
+      desc: 'Refreshing fresh lime coolers and house beverages.',
       image: 'assets/images/mocktail.jpg'
     },
     {
-      title: 'Artisanal Dessert Platter',
-      tag: 'Pastry',
-      desc: 'Saffron panna cotta, dark chocolate ganache, and seasonal bakes.',
+      title: 'Desserts & Sweets',
+      tag: 'Desserts',
+      desc: 'Warm brownies, ice cream, and traditional Indian sweets.',
       image: 'assets/images/dessert.jpg'
     }
   ];
 
-  // --- Render Menu Items ---
   const menuGrid = document.getElementById('menu-grid');
   const menuTabs = document.querySelectorAll('.menu-tab');
   let activeMenuCategory = 'all';
@@ -170,7 +165,6 @@
     menuGrid.innerHTML = filtered.map(item => `
       <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between gap-3 group">
         <div class="space-y-2">
-          
           <div class="flex items-start justify-between gap-2">
             <div class="flex items-center gap-1.5">
               <span class="w-3 h-3 rounded-full flex items-center justify-center p-0.5 border ${
@@ -196,13 +190,12 @@
               ${item.description}
             </p>
           </div>
-
         </div>
 
         <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
           <span class="text-sm font-extrabold text-slate-900">${item.price}</span>
           <a href="#booking" class="text-[11px] font-semibold text-blue-600 hover:text-blue-800 transition">
-            Reserve to Taste &rarr;
+            Book Table &rarr;
           </a>
         </div>
       </div>
@@ -223,7 +216,6 @@
     });
   });
 
-  // --- Render Gallery Items with Real Local Images ---
   const galleryGrid = document.getElementById('gallery-grid');
   function renderGallery() {
     if (!galleryGrid) return;
@@ -242,15 +234,14 @@
             <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">${item.desc}</p>
           </div>
           <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
-            <span class="font-medium text-slate-400">The Olive Bistro • Surat</span>
-            <a href="#booking" class="text-blue-600 font-bold hover:underline">Book Visit &rarr;</a>
+            <span class="font-medium text-slate-400">City Restaurant</span>
+            <a href="#booking" class="text-blue-600 font-bold hover:underline">Book Table &rarr;</a>
           </div>
         </div>
       </div>
     `).join('');
   }
 
-  // --- Table Booking Logic ---
   const reservationForm = document.getElementById('reservation-form');
   const bookGuests = document.getElementById('book-guests');
   const bookDate = document.getElementById('book-date');
@@ -271,7 +262,6 @@
   const ticketParty = document.getElementById('ticket-party');
   const ticketDateTime = document.getElementById('ticket-datetime');
 
-  // Set default reservation date to today, min date to today
   const today = new Date();
   const yyyy = today.getFullYear();
   const mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -283,7 +273,6 @@
     bookDate.min = todayString;
   }
 
-  // Format date for summary
   function formatDisplayDate(dateStr) {
     if (!dateStr) return 'Today';
     const [y, m, d] = dateStr.split('-');
@@ -302,7 +291,7 @@
       summaryTime.textContent = selectedTimeSlot.value;
     }
     if (summarySeating && bookSeating) {
-      summarySeating.textContent = bookSeating.value.split('(')[0].trim();
+      summarySeating.textContent = bookSeating.value;
     }
   }
 
@@ -310,7 +299,6 @@
   if (bookDate) bookDate.addEventListener('input', updateSummary);
   if (bookSeating) bookSeating.addEventListener('change', updateSummary);
 
-  // Time slot selection
   timeSlotButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const timeVal = btn.getAttribute('data-time');
@@ -328,8 +316,7 @@
     });
   });
 
-  // Handle Reservation Form Submission
-  const STORAGE_KEY = 'olive_bistro_reservations_v1';
+  const STORAGE_KEY = 'city_restaurant_reservations_v1';
 
   if (reservationForm) {
     reservationForm.addEventListener('submit', (e) => {
@@ -340,13 +327,12 @@
       const guests = bookGuests?.value || '4 Guests';
       const date = bookDate?.value || todayString;
       const time = selectedTimeSlot?.value || '07:30 PM';
-      const seating = bookSeating?.value || 'Rooftop Terrace';
+      const seating = bookSeating?.value || 'Indoor AC Hall';
       const requests = document.getElementById('book-requests')?.value.trim() || '';
 
       if (!name || !phone) return;
 
-      // Generate random booking code
-      const refCode = `OB-${Math.floor(1000 + Math.random() * 9000)}`;
+      const refCode = `CR-${Math.floor(1000 + Math.random() * 9000)}`;
 
       const reservationRecord = {
         refCode,
@@ -360,7 +346,6 @@
         bookedAt: new Date().toISOString()
       };
 
-      // Save to localStorage
       try {
         const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
         stored.unshift(reservationRecord);
@@ -369,25 +354,21 @@
         console.error('Error saving reservation:', err);
       }
 
-      // Populate confirmation ticket dialog
       if (ticketRef) ticketRef.textContent = refCode;
       if (ticketName) ticketName.textContent = name;
       if (ticketParty) ticketParty.textContent = `${guests} • ${seating}`;
       if (ticketDateTime) ticketDateTime.textContent = `${formatDisplayDate(date)} • ${time}`;
 
-      // Open native modal
       if (bookingDialog) {
         bookingDialog.showModal();
       }
 
-      // Reset form
       reservationForm.reset();
       if (bookDate) bookDate.value = todayString;
       updateSummary();
     });
   }
 
-  // Progressive light-dismiss for dialog
   if (bookingDialog && !('closedBy' in HTMLDialogElement.prototype)) {
     const isClickOutside = (e, dlg) => {
       const r = dlg.getBoundingClientRect();
@@ -404,7 +385,6 @@
     });
   }
 
-  // --- Mobile Navigation Toggle ---
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileNav = document.getElementById('mobile-nav');
 
@@ -420,9 +400,7 @@
     });
   }
 
-  // --- Initial Render ---
   renderMenu();
   renderGallery();
   updateSummary();
-
 })();

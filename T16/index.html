@@ -3,280 +3,226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Olive Bistro | Mediterranean &amp; Contemporary Dining</title>
+  <title>City Restaurant | Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen font-['Plus_Jakarta_Sans',sans-serif]">
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-['Plus_Jakarta_Sans',sans-serif]">
 
-  <!-- Top Announcement Bar -->
-  <div class="bg-slate-900 text-slate-300 text-[11px] font-medium py-2 px-4 text-center border-b border-slate-800">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1">
-      <span>Open Today: 11:30 AM – 11:00 PM • Ring Road, Surat</span>
-      <span class="text-blue-400 font-semibold">Valet Parking Available • Weekend Live Acoustic Nights</span>
-    </div>
-  </div>
-
-  <!-- Main Navigation Header -->
-  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-      
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-2.5">
-        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-extrabold text-lg shadow-sm">
-          OB
-        </div>
-        <div>
-          <span class="text-base font-extrabold tracking-tight text-slate-900 block leading-tight">The Olive Bistro</span>
-          <span class="text-[10px] text-slate-500 font-semibold tracking-wider uppercase block">Artisanal Dining</span>
-        </div>
+      <a href="#" class="font-bold text-slate-900 text-sm sm:text-base">
+        City <span class="text-blue-600">Restaurant</span>
       </a>
 
-      <!-- Desktop Navigation Links -->
       <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-600">
-        <a href="#about" class="hover:text-blue-600 transition">About</a>
+        <a href="#about" class="hover:text-blue-600 transition">Home</a>
         <a href="#menu" class="hover:text-blue-600 transition">Menu</a>
         <a href="#services" class="hover:text-blue-600 transition">Services</a>
         <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
-        <a href="#booking" class="hover:text-blue-600 transition">Book a Table</a>
+        <a href="#booking" class="hover:text-blue-600 transition">Book Table</a>
         <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
       </nav>
 
-      <!-- Header Action & Mobile Menu Button -->
       <div class="flex items-center gap-3">
         <a href="#booking" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition shadow-sm">
-          Reserve Table
+          Book Table
         </a>
 
-        <button type="button" id="mobile-menu-btn" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+        <button type="button" id="mobile-menu-btn" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition border border-slate-200">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
       </div>
-
     </div>
 
-    <!-- Mobile Navigation Drawer -->
     <div id="mobile-nav" class="hidden md:hidden border-t border-slate-200 bg-white px-4 py-3 space-y-2 text-xs font-semibold text-slate-700">
-      <a href="#about" class="block py-1.5 hover:text-blue-600">About</a>
+      <a href="#about" class="block py-1.5 hover:text-blue-600">Home</a>
       <a href="#menu" class="block py-1.5 hover:text-blue-600">Menu</a>
       <a href="#services" class="block py-1.5 hover:text-blue-600">Services</a>
       <a href="#gallery" class="block py-1.5 hover:text-blue-600">Gallery</a>
-      <a href="#booking" class="block py-1.5 hover:text-blue-600">Book a Table</a>
-      <a href="#contact" class="block py-1.5 hover:text-blue-600">Contact &amp; Timings</a>
+      <a href="#booking" class="block py-1.5 hover:text-blue-600">Book Table</a>
+      <a href="#contact" class="block py-1.5 hover:text-blue-600">Contact</a>
     </div>
   </header>
 
-  <main class="space-y-16 py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+  <main class="flex-1 space-y-14 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 max-w-6xl w-full mx-auto">
 
-    <!-- HERO SECTION -->
-    <section id="about" class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm relative overflow-hidden">
+    <!-- Hero -->
+    <section id="about" class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        <!-- Left Content (7 cols) -->
-        <div class="lg:col-span-7 space-y-5">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[11px] font-bold border border-blue-200">
-            <span>Fresh Seasonal Produce</span>
-            <span class="w-1 h-1 rounded-full bg-blue-600"></span>
-            <span>Artisanal Wood-Fired Hearth</span>
-          </div>
-
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
-            Crafting memorable dining experiences in Surat.
+        <div class="lg:col-span-7 space-y-4">
+          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            Fresh Food, Family Dining &amp; Easy Table Booking
           </h1>
 
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
-            Welcome to The Olive Bistro. We bring together vibrant Mediterranean flavors and contemporary Indian culinary craft, prepared with locally sourced farm ingredients and baked in our hand-built brick oven.
+            Browse our daily menu, view our dining services and photos, and reserve your table online for lunch or dinner at City Restaurant.
           </p>
 
-          <!-- Action Buttons -->
           <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a href="#booking" class="px-5 py-2.5 text-xs font-bold rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition shadow-sm">
-              Book a Table Online &rarr;
+            <a href="#booking" class="px-5 py-2.5 text-xs font-semibold rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition shadow-sm">
+              Book a Table
             </a>
-            <a href="#menu" class="px-5 py-2.5 text-xs font-bold rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 transition">
-              Explore Our Menu
+            <a href="#menu" class="px-5 py-2.5 text-xs font-semibold rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
+              View Menu
             </a>
           </div>
 
-          <!-- Feature Metric Highlights -->
           <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-100 text-center sm:text-left">
             <div>
-              <span class="text-xl sm:text-2xl font-extrabold text-slate-900 block">4.8 ★</span>
-              <span class="text-[11px] text-slate-500 font-medium">1,200+ Guest Reviews</span>
+              <span class="text-xl font-extrabold text-slate-900 block">4.7 ★</span>
+              <span class="text-[11px] text-slate-500 font-medium">Customer Rating</span>
             </div>
             <div>
-              <span class="text-xl sm:text-2xl font-extrabold text-slate-900 block">35+</span>
-              <span class="text-[11px] text-slate-500 font-medium">Artisanal Dishes</span>
+              <span class="text-xl font-extrabold text-slate-900 block">12+</span>
+              <span class="text-[11px] text-slate-500 font-medium">Popular Dishes</span>
             </div>
             <div>
-              <span class="text-xl sm:text-2xl font-extrabold text-slate-900 block">7+ Yrs</span>
-              <span class="text-[11px] text-slate-500 font-medium">Culinary Heritage</span>
+              <span class="text-xl font-extrabold text-slate-900 block">Daily</span>
+              <span class="text-[11px] text-slate-500 font-medium">11:30 AM – 11 PM</span>
             </div>
           </div>
         </div>
 
-        <!-- Right Visual Showcase with Local Photo (5 cols) -->
-        <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-slate-200 shadow-sm relative group">
-          <img src="assets/images/ambiance.jpg" alt="The Olive Bistro Warm Dining Ambiance" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
-            <span class="text-[10px] uppercase font-bold tracking-wider text-blue-400 block">Signature Atmosphere</span>
-            <h3 class="text-base font-bold leading-tight">Warm Ambience &amp; Brick Hearth Dining</h3>
-            <p class="text-xs text-slate-300 mt-1">Lunch Service: 12:00 PM – 03:30 PM • Dinner Service: 07:00 PM – 11:00 PM</p>
+        <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-slate-200 shadow-sm relative">
+          <img src="assets/images/ambiance.jpg" alt="City Restaurant Dining Area" class="w-full h-72 sm:h-80 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/15 to-transparent flex flex-col justify-end p-5 text-white">
+            <h2 class="text-base font-bold leading-tight">Comfortable Family Dining</h2>
+            <p class="text-xs text-slate-200 mt-1">Lunch: 12:00 PM – 03:30 PM • Dinner: 07:00 PM – 11:00 PM</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- MENU SECTION -->
+    <!-- Menu Section -->
     <section id="menu" class="space-y-6">
-      
-      <!-- Section Header -->
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <span class="text-[11px] font-bold text-blue-600 uppercase tracking-widest block">Culinary Selections</span>
-          <h2 class="text-2xl font-extrabold text-slate-900">Our Seasonal Menu</h2>
-          <p class="text-xs text-slate-500 mt-0.5">Crafted with seasonal botanicals, whole spices, and artisan ingredients</p>
+          <h2 class="text-xl font-extrabold text-slate-900">Our Menu</h2>
+          <p class="text-xs text-slate-500 mt-0.5">Select a category to filter dishes</p>
         </div>
 
-        <!-- Menu Category Filter Tabs -->
         <div class="flex items-center gap-1.5 overflow-x-auto pb-1" id="menu-category-tabs">
           <button type="button" data-cat="all" class="menu-tab px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white transition whitespace-nowrap shadow-sm">
-            All Items
+            All
           </button>
           <button type="button" data-cat="starters" class="menu-tab px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition whitespace-nowrap">
             Starters
           </button>
           <button type="button" data-cat="mains" class="menu-tab px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition whitespace-nowrap">
-            Mains &amp; Wood-Fired
+            Main Course
           </button>
           <button type="button" data-cat="desserts" class="menu-tab px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition whitespace-nowrap">
             Desserts
           </button>
           <button type="button" data-cat="beverages" class="menu-tab px-3 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition whitespace-nowrap">
-            Mocktails
+            Drinks
           </button>
         </div>
       </div>
 
-      <!-- Menu Grid -->
-      <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Rendered by JS -->
-      </div>
-
+      <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- Services Section -->
     <section id="services" class="space-y-6">
       <div>
-        <span class="text-[11px] font-bold text-blue-600 uppercase tracking-widest block">Experiences &amp; Hospitality</span>
-        <h2 class="text-2xl font-extrabold text-slate-900">Our Dining Services</h2>
-        <p class="text-xs text-slate-500 mt-0.5">From quiet intimate dinners to grand rooftop milestone gatherings</p>
+        <h2 class="text-xl font-extrabold text-slate-900">Dining Services</h2>
+        <p class="text-xs text-slate-500 mt-0.5">Options available for dine-in, events, and takeaway</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-2.5">
-          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-base">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-2">
+          <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">
             01
           </div>
-          <h3 class="text-sm font-bold text-slate-900">Rooftop &amp; Al-Fresco Dining</h3>
+          <h3 class="text-sm font-bold text-slate-900">Dine-In Seating</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Open-air seating overlooking Surat's twilight skyline with warm ambient string lights and acoustic playlists.
+            Clean indoor AC dining hall and outdoor seating for families and small groups.
           </p>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-2.5">
-          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-base">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-2">
+          <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">
             02
           </div>
-          <h3 class="text-sm font-bold text-slate-900">Private Dining &amp; Events</h3>
+          <h3 class="text-sm font-bold text-slate-900">Party &amp; Group Booking</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Dedicated dining enclosures tailored for birthdays, family anniversaries, and corporate leadership dinners.
+            Dedicated group tables for birthdays, anniversaries, and team dinners.
           </p>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-2.5">
-          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-base">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-2">
+          <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">
             03
           </div>
-          <h3 class="text-sm font-bold text-slate-900">Wood-Fired Hearth Craft</h3>
+          <h3 class="text-sm font-bold text-slate-900">Freshly Prepared Food</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Live interactive kitchen where sourdough pizzas, charred vegetables, and artisanal flatbreads are prepared in front of you.
+            Every dish is cooked fresh to order using quality ingredients and spices.
           </p>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-2.5">
-          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-base">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-2">
+          <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">
             04
           </div>
-          <h3 class="text-sm font-bold text-slate-900">Takeaway &amp; Gourmet Boxes</h3>
+          <h3 class="text-sm font-bold text-slate-900">Takeaway Parcel</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Carefully packaged dining sets and artisanal breads ready for home celebrations and curbside pickup.
+            Quick counter pickup and packed meal boxes for home or office orders.
           </p>
         </div>
-
       </div>
     </section>
 
-    <!-- GALLERY SECTION (WITH REAL LOCAL PHOTOS) -->
+    <!-- Gallery Section -->
     <section id="gallery" class="space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
-        <div>
-          <span class="text-[11px] font-bold text-blue-600 uppercase tracking-widest block">Atmosphere &amp; Ambience</span>
-          <h2 class="text-2xl font-extrabold text-slate-900">Bistro Photo Gallery</h2>
-          <p class="text-xs text-slate-500 mt-0.5">A glimpse into our interior dining space, artisan dishes, and beverages</p>
-        </div>
-        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">6 Photo Features</span>
+      <div>
+        <h2 class="text-xl font-extrabold text-slate-900">Photo Gallery</h2>
+        <p class="text-xs text-slate-500 mt-0.5">Photos of our restaurant interior and food</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="gallery-grid">
-        <!-- Rendered with local image assets -->
-      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="gallery-grid"></div>
     </section>
 
-    <!-- TABLE BOOKING INTERFACE SECTION -->
-    <section id="booking" class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
-      
-      <div class="max-w-2xl">
-        <span class="text-[11px] font-bold text-blue-600 uppercase tracking-widest block">Reservations</span>
-        <h2 class="text-2xl font-extrabold text-slate-900">Reserve Your Table</h2>
-        <p class="text-xs text-slate-500 mt-1">Book your table online in seconds. Instant on-screen confirmation upon booking.</p>
+    <!-- Table Booking Section -->
+    <section id="booking" class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+      <div>
+        <h2 class="text-xl font-extrabold text-slate-900">Book a Table</h2>
+        <p class="text-xs text-slate-500 mt-0.5">Select your date, time slot, and number of guests</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-        <!-- Booking Form (8 cols) -->
         <form id="reservation-form" class="lg:col-span-8 space-y-5">
-          
-          <!-- Step 1: Guests and Date -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label for="book-guests" class="block text-xs font-bold text-slate-700 mb-1.5">Number of Guests *</label>
+              <label for="book-guests" class="block text-xs font-bold text-slate-700 mb-1.5">Guests *</label>
               <select id="book-guests" required class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 focus:bg-white transition text-slate-800">
-                <option value="2 Guests">2 Guests (Table for Two)</option>
-                <option value="1 Guest">1 Guest (Single Diner)</option>
+                <option value="2 Guests">2 Guests</option>
+                <option value="1 Guest">1 Guest</option>
                 <option value="3 Guests">3 Guests</option>
-                <option value="4 Guests" selected>4 Guests (Standard Family Table)</option>
-                <option value="6 Guests">6 Guests (Group Table)</option>
-                <option value="8+ Guests">8+ Guests (Party Table)</option>
+                <option value="4 Guests" selected>4 Guests</option>
+                <option value="6 Guests">6 Guests</option>
+                <option value="8+ Guests">8+ Guests</option>
               </select>
             </div>
 
             <div>
-              <label for="book-date" class="block text-xs font-bold text-slate-700 mb-1.5">Reservation Date *</label>
+              <label for="book-date" class="block text-xs font-bold text-slate-700 mb-1.5">Date *</label>
               <input type="date" id="book-date" required class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 focus:bg-white transition text-slate-800">
             </div>
           </div>
 
-          <!-- Step 2: Time Slot Selector -->
           <div>
-            <label class="block text-xs font-bold text-slate-700 mb-1.5">Select Dining Time Slot *</label>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">Time Slot *</label>
             <div class="grid grid-cols-3 sm:grid-cols-6 gap-2" id="time-slots-container">
               <button type="button" data-time="12:30 PM" class="slot-btn py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition text-center">12:30 PM</button>
               <button type="button" data-time="01:30 PM" class="slot-btn py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition text-center">01:30 PM</button>
@@ -288,22 +234,19 @@
             <input type="hidden" id="selected-time-slot" value="07:30 PM">
           </div>
 
-          <!-- Step 3: Seating Preference -->
           <div>
-            <label for="book-seating" class="block text-xs font-bold text-slate-700 mb-1.5">Seating Preference</label>
+            <label for="book-seating" class="block text-xs font-bold text-slate-700 mb-1.5">Seating Area</label>
             <select id="book-seating" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 focus:bg-white transition text-slate-800">
-              <option value="Rooftop Terrace (Open-Air)">Rooftop Terrace (Open-Air with City View)</option>
-              <option value="Indoor AC Main Dining">Indoor AC Main Dining</option>
-              <option value="Private Dining Alcove">Private Dining Alcove</option>
-              <option value="First Available">First Available (No Preference)</option>
+              <option value="Indoor AC Hall">Indoor AC Hall</option>
+              <option value="Outdoor Seating">Outdoor Seating</option>
+              <option value="Family Section">Family Section</option>
             </select>
           </div>
 
-          <!-- Step 4: Contact Details -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label for="book-name" class="block text-xs font-bold text-slate-700 mb-1.5">Guest Name *</label>
-              <input type="text" id="book-name" required placeholder="e.g. Jenish Gajera" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 focus:bg-white transition">
+              <label for="book-name" class="block text-xs font-bold text-slate-700 mb-1.5">Full Name *</label>
+              <input type="text" id="book-name" required placeholder="Your name" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 focus:bg-white transition">
             </div>
 
             <div>
@@ -313,23 +256,20 @@
           </div>
 
           <div>
-            <label for="book-requests" class="block text-xs font-bold text-slate-700 mb-1.5">Special Requests or Occasion (Optional)</label>
-            <input type="text" id="book-requests" placeholder="e.g. Birthday celebration, high chair needed, anniversary cake" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 focus:bg-white transition">
+            <label for="book-requests" class="block text-xs font-bold text-slate-700 mb-1.5">Special Request (Optional)</label>
+            <input type="text" id="book-requests" placeholder="e.g. Window table, birthday dinner" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-600 focus:bg-white transition">
           </div>
 
-          <div class="pt-2">
-            <button type="submit" class="w-full sm:w-auto px-8 py-3 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition shadow-sm">
-              Confirm Table Reservation &rarr;
+          <div class="pt-1">
+            <button type="submit" class="w-full sm:w-auto px-6 py-2.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition shadow-sm">
+              Confirm Booking
             </button>
           </div>
-
         </form>
 
-        <!-- Right Side: Live Summary & Policies (4 cols) -->
         <div class="lg:col-span-4 bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-4">
-          <div class="border-b border-slate-200 pb-3">
-            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block">Real-Time Summary</span>
-            <h3 class="text-sm font-bold text-slate-900">Reservation Details</h3>
+          <div class="border-b border-slate-200 pb-2.5">
+            <h3 class="text-sm font-bold text-slate-900">Booking Summary</h3>
           </div>
 
           <div class="space-y-2.5 text-xs text-slate-600">
@@ -342,155 +282,108 @@
               <span id="summary-date" class="font-bold text-slate-800">Today</span>
             </div>
             <div class="flex justify-between py-1 border-b border-slate-200/60">
-              <span class="text-slate-400">Time Slot:</span>
+              <span class="text-slate-400">Time:</span>
               <span id="summary-time" class="font-bold text-blue-600">07:30 PM</span>
             </div>
             <div class="flex justify-between py-1">
-              <span class="text-slate-400">Seating:</span>
-              <span id="summary-seating" class="font-bold text-slate-800 text-right">Rooftop Terrace</span>
+              <span class="text-slate-400">Area:</span>
+              <span id="summary-seating" class="font-bold text-slate-800 text-right">Indoor AC Hall</span>
             </div>
           </div>
 
-          <!-- Booking Policies Box -->
-          <div class="p-3 bg-white rounded-xl border border-slate-200 text-[11px] text-slate-500 space-y-1.5 leading-relaxed">
-            <p class="font-semibold text-slate-800">Reservation Guidelines:</p>
-            <p>• Tables are held for 15 minutes past the reserved time.</p>
-            <p>• No cancellation charges. For modifications, please contact our host desk.</p>
+          <div class="p-3 bg-white rounded-xl border border-slate-200 text-[11px] text-slate-500 space-y-1 leading-relaxed">
+            <p class="font-semibold text-slate-800">Note:</p>
+            <p>Tables are held for 15 minutes from the reserved time.</p>
           </div>
         </div>
 
       </div>
-
     </section>
 
-    <!-- CONTACT & HOURS SECTION -->
-    <section id="contact" class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
-      
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
       <div>
-        <span class="text-[11px] font-bold text-blue-600 uppercase tracking-widest block">Find &amp; Contact Us</span>
-        <h2 class="text-2xl font-extrabold text-slate-900">Hours &amp; Location</h2>
-        <p class="text-xs text-slate-500 mt-0.5">Located in the vibrant center of Surat with dedicated valet parking</p>
+        <h2 class="text-xl font-extrabold text-slate-900">Contact &amp; Hours</h2>
+        <p class="text-xs text-slate-500 mt-0.5">Visit us or call for takeaway and group bookings</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
-        
-        <!-- Column 1: Operating Hours -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-              🕒
-            </div>
-            <h3 class="text-sm font-bold text-slate-900">Service Hours</h3>
-          </div>
-
-          <div class="space-y-2 text-slate-600">
-            <div class="flex justify-between pb-1.5 border-b border-slate-200">
-              <span>Monday – Thursday:</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-2.5">
+          <h3 class="text-sm font-bold text-slate-900">Opening Hours</h3>
+          <div class="space-y-1.5 text-slate-600">
+            <div class="flex justify-between pb-1 border-b border-slate-200">
+              <span>Mon – Fri:</span>
               <span class="font-semibold text-slate-800">11:30 AM – 11:00 PM</span>
             </div>
-            <div class="flex justify-between pb-1.5 border-b border-slate-200">
-              <span>Friday – Sunday:</span>
+            <div class="flex justify-between">
+              <span>Sat – Sun:</span>
               <span class="font-semibold text-slate-800">11:30 AM – 11:30 PM</span>
             </div>
-            <div class="flex justify-between">
-              <span>Sunday Brunch:</span>
-              <span class="font-semibold text-blue-600">11:30 AM – 03:30 PM</span>
-            </div>
           </div>
         </div>
 
-        <!-- Column 2: Address & Parking -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-              📍
-            </div>
-            <h3 class="text-sm font-bold text-slate-900">Address &amp; Valet</h3>
-          </div>
-
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-2.5">
+          <h3 class="text-sm font-bold text-slate-900">Address</h3>
           <p class="text-slate-600 leading-relaxed">
-            The Olive Bistro, 4th Floor Rooftop, Landmark Heights, Ring Road, Surat, Gujarat 395002.
+            City Restaurant, Shop 12-14, Ring Road, Surat, Gujarat 395002.
           </p>
-          <p class="text-slate-500 text-[11px] pt-1">
-            Complimentary valet parking available at ground level.
-          </p>
+          <p class="text-slate-500 text-[11px]">Parking available near main entrance.</p>
         </div>
 
-        <!-- Column 3: Contact & Direct Inquiries -->
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-              📞
-            </div>
-            <h3 class="text-sm font-bold text-slate-900">Direct Inquiries</h3>
-          </div>
-
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-2.5">
+          <h3 class="text-sm font-bold text-slate-900">Contact Details</h3>
           <div class="space-y-1.5 text-slate-600">
-            <p><span class="text-slate-400">Host Desk:</span> <a href="tel:+919825012345" class="font-semibold text-blue-600 hover:underline">+91 98250 12345</a></p>
-            <p><span class="text-slate-400">Events Desk:</span> <a href="tel:+919825067890" class="font-semibold text-blue-600 hover:underline">+91 98250 67890</a></p>
-            <p><span class="text-slate-400">Email:</span> <span class="font-semibold text-slate-800">reservations@theolivebistro.in</span></p>
+            <p><span class="text-slate-400">Phone:</span> <a href="tel:+919825012345" class="font-semibold text-blue-600 hover:underline">+91 98250 12345</a></p>
+            <p><span class="text-slate-400">Email:</span> <span class="font-semibold text-slate-800">contact@cityrestaurant.com</span></p>
           </div>
         </div>
-
       </div>
-
     </section>
 
   </main>
 
-  <!-- NATIVE MODAL: RESERVATION CONFIRMATION DIALOG -->
+  <!-- Confirmation Dialog -->
   <dialog id="booking-dialog" closedby="any" aria-labelledby="dialog-confirmed-title" class="bg-white rounded-3xl border border-slate-200 p-0 shadow-2xl max-w-md w-full mx-auto my-auto text-slate-900">
     <div class="p-6 space-y-5">
-      
-      <div class="text-center space-y-2 pt-2">
+      <div class="text-center space-y-2 pt-1">
         <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto text-xl font-bold">
           ✓
         </div>
-        <h3 id="dialog-confirmed-title" class="text-lg font-extrabold text-slate-900">Table Reserved Successfully!</h3>
-        <p class="text-xs text-slate-500">We look forward to hosting you at The Olive Bistro.</p>
+        <h3 id="dialog-confirmed-title" class="text-lg font-extrabold text-slate-900">Table Booked!</h3>
+        <p class="text-xs text-slate-500">Your table reservation at City Restaurant is confirmed.</p>
       </div>
 
-      <!-- Ticket Receipt Card -->
       <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 space-y-2 text-xs">
         <div class="flex justify-between border-b border-slate-200 pb-2">
-          <span class="text-slate-400">Booking Reference:</span>
-          <span id="ticket-ref" class="font-mono font-bold text-slate-900">OB-8291</span>
+          <span class="text-slate-400">Booking ID:</span>
+          <span id="ticket-ref" class="font-mono font-bold text-slate-900">CR-8291</span>
         </div>
         <div class="flex justify-between">
-          <span class="text-slate-400">Guest Name:</span>
-          <span id="ticket-name" class="font-semibold text-slate-800">Jenish Gajera</span>
+          <span class="text-slate-400">Name:</span>
+          <span id="ticket-name" class="font-semibold text-slate-800">-</span>
         </div>
         <div class="flex justify-between">
-          <span class="text-slate-400">Guests &amp; Seating:</span>
-          <span id="ticket-party" class="font-semibold text-slate-800">4 Guests (Rooftop Terrace)</span>
+          <span class="text-slate-400">Details:</span>
+          <span id="ticket-party" class="font-semibold text-slate-800">-</span>
         </div>
         <div class="flex justify-between">
           <span class="text-slate-400">Date &amp; Time:</span>
-          <span id="ticket-datetime" class="font-semibold text-blue-600">Nov 25, 2026 • 07:30 PM</span>
+          <span id="ticket-datetime" class="font-semibold text-blue-600">-</span>
         </div>
       </div>
 
-      <div class="pt-2 flex items-center gap-3">
-        <form method="dialog" class="w-full">
-          <button type="submit" class="w-full py-2.5 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition shadow-sm">
-            Done &amp; Close
-          </button>
-        </form>
-      </div>
-
+      <form method="dialog" class="w-full">
+        <button type="submit" class="w-full py-2.5 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition shadow-sm">
+          Close
+        </button>
+      </form>
     </div>
   </dialog>
 
-  <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-400 py-8 px-4 sm:px-6 lg:px-8 border-t border-slate-800 mt-16 text-xs">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-      <div>
-        <p class="font-bold text-slate-200 text-sm">The Olive Bistro</p>
-        <p class="text-[11px] text-slate-500 mt-0.5">Contemporary Mediterranean &amp; Wood-Fired Fusion Dining • Surat</p>
-      </div>
-      <p class="text-[11px] text-slate-500">
-        Task 16: Restaurant Website • Developed by Jenish Gajera
-      </p>
+  <footer class="bg-white border-t border-slate-200 py-6 px-4 sm:px-6 lg:px-8 mt-12 text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <p class="font-semibold text-slate-800">City Restaurant</p>
+      <p>Ring Road, Surat, Gujarat • Open Daily 11:30 AM – 11:00 PM</p>
     </div>
   </footer>
 
